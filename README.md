@@ -17,10 +17,18 @@ Fetch the sources down to the workspace:
 	west init -m git@github.com:idiot-prototypes/sensitive-idiot
 	west update
 
-Build and run the application from the source tree:
+Build and flash the application from the source tree:
 
-	west build -b qemu_x86_64 zephyr/samples/net/mqtt_publisher/ -- "-DEXTRA_CONF_FILE=$PWD/zephyr/samples/net/sockets/echo_server/overlay-e1000.conf"
-	west build -t run
+	west build -b esp32_devkitc_wroom/esp32/procpu app/
+	west build -t flash
+
+## PREREQUISITE
+
+### BLOBS
+
+Download the blobs:
+
+	west blobs west blobs fetch hal_espressif
 
 ## PATCHES
 
